@@ -1,0 +1,303 @@
+{
+    "rabbit_version": "3.9.13",
+    "rabbitmq_version": "3.9.13",
+    "product_name": "RabbitMQ",
+    "product_version": "3.9.13",
+    "users": [
+        {
+            "name": "guest",
+            "password_hash": "2pvtlqsu0Vn5/Lv8NtJ8RBTOlTBa0V4lqOUdG/W42R4ewbzp",
+            "hashing_algorithm": "rabbit_password_hashing_sha256",
+            "tags": [
+                "administrator"
+            ],
+            "limits": {}
+        }
+    ],
+    "vhosts": [
+        {
+            "name": "my-vhost"
+        }
+    ],
+    "permissions": [
+        {
+            "user": "guest",
+            "vhost": "my-vhost",
+            "configure": ".*",
+            "write": ".*",
+            "read": ".*"
+        }
+    ],
+    "topic_permissions": [],
+    "parameters": [],
+    "global_parameters": [
+        {
+            "name": "internal_cluster_id",
+            "value": "rabbitmq-cluster-id-OwgON5VEIPWxvhXA0kmM1A"
+        }
+    ],
+    "policies": [],
+    "queues": [
+        {
+            "name": "custom-agent",
+            "vhost": "my-vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "my-vhost-manager-consolidate",
+            "vhost": "my-vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "my-vhost-manager",
+            "vhost": "my-vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "my-vhost-manager-SMS",
+            "vhost": "my-vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "amq.gen-_cPVW0jVcVb_c7Cv4OcJlQ",
+            "vhost": "my-vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "custom-agent-call",
+            "vhost": "my-vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "test-queue",
+            "vhost": "my-vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {
+                "x-queue-type": "classic"
+            }
+        },
+        {
+            "name": "my-vhost-payments",
+            "vhost": "my-vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "amq.gen-MWWgkt1EWU0MhUEEz-2TxQ",
+            "vhost": "my-vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "amq.gen--e4RhtFd1IIOkoifNCQkbA",
+            "vhost": "my-vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        }
+    ],
+    "exchanges": [
+        {
+            "name": "my-vhost",
+            "vhost": "my-vhost",
+            "type": "topic",
+            "durable": true,
+            "auto_delete": false,
+            "internal": false,
+            "arguments": {}
+        }
+    ],
+    "bindings": [
+        {
+            "source": "my-vhost",
+            "vhost": "my-vhost",
+            "destination": "my-vhost-manager-SMS",
+            "destination_type": "queue",
+            "routing_key": "SMS.*.SKIP",
+            "arguments": {}
+        },
+        {
+            "source": "my-vhost",
+            "vhost": "my-vhost",
+            "destination": "test-queue",
+            "destination_type": "queue",
+            "routing_key": "SMS.*.SKIP",
+            "arguments": {}
+        },
+        {
+            "source": "my-vhost",
+            "vhost": "my-vhost",
+            "destination": "my-vhost-manager-SMS",
+            "destination_type": "queue",
+            "routing_key": "SMS.*.SUCCESS",
+            "arguments": {}
+        },
+        {
+            "source": "my-vhost",
+            "vhost": "my-vhost",
+            "destination": "amq.gen-MWWgkt1EWU0MhUEEz-2TxQ",
+            "destination_type": "queue",
+            "routing_key": "SMS.*.SUCCESS",
+            "arguments": {}
+        },
+        {
+            "source": "my-vhost",
+            "vhost": "my-vhost",
+            "destination": "custom-agent",
+            "destination_type": "queue",
+            "routing_key": "SMS.CREATE",
+            "arguments": {}
+        },
+        {
+            "source": "my-vhost",
+            "vhost": "my-vhost",
+            "destination": "custom-agent",
+            "destination_type": "queue",
+            "routing_key": "SMS.UPDATE",
+            "arguments": {}
+        },
+        {
+            "source": "my-vhost",
+            "vhost": "my-vhost",
+            "destination": "my-vhost-manager-consolidate",
+            "destination_type": "queue",
+            "routing_key": "CALL.TERMINATE",
+            "arguments": {}
+        },
+        {
+            "source": "my-vhost",
+            "vhost": "my-vhost",
+            "destination": "amq.gen--e4RhtFd1IIOkoifNCQkbA",
+            "destination_type": "queue",
+            "routing_key": "CALL.TERMINATE",
+            "arguments": {}
+        },
+        {
+            "source": "my-vhost",
+            "vhost": "my-vhost",
+            "destination": "custom-agent",
+            "destination_type": "queue",
+            "routing_key": "TEST.CREATE",
+            "arguments": {}
+        },
+        {
+            "source": "my-vhost",
+            "vhost": "my-vhost",
+            "destination": "custom-agent-call",
+            "destination_type": "queue",
+            "routing_key": "TEST.CREATE",
+            "arguments": {}
+        },
+        {
+            "source": "my-vhost",
+            "vhost": "my-vhost",
+            "destination": "my-vhost-manager",
+            "destination_type": "queue",
+            "routing_key": "TEST.SUCCESS",
+            "arguments": {}
+        },
+        {
+            "source": "my-vhost",
+            "vhost": "my-vhost",
+            "destination": "amq.gen-_cPVW0jVcVb_c7Cv4OcJlQ",
+            "destination_type": "queue",
+            "routing_key": "TEST.SUCCESS",
+            "arguments": {}
+        },
+        {
+            "source": "my-vhost",
+            "vhost": "my-vhost",
+            "destination": "my-vhost-manager",
+            "destination_type": "queue",
+            "routing_key": "TASK.CANCEL",
+            "arguments": {}
+        },
+        {
+            "source": "my-vhost",
+            "vhost": "my-vhost",
+            "destination": "amq.gen-_cPVW0jVcVb_c7Cv4OcJlQ",
+            "destination_type": "queue",
+            "routing_key": "TASK.CANCEL",
+            "arguments": {}
+        },
+        {
+            "source": "my-vhost",
+            "vhost": "my-vhost",
+            "destination": "my-vhost-manager",
+            "destination_type": "queue",
+            "routing_key": "TASK.CALL.CREATE",
+            "arguments": {}
+        },
+        {
+            "source": "my-vhost",
+            "vhost": "my-vhost",
+            "destination": "amq.gen-_cPVW0jVcVb_c7Cv4OcJlQ",
+            "destination_type": "queue",
+            "routing_key": "TASK.CALL.CREATE",
+            "arguments": {}
+        },
+        {
+            "source": "my-vhost",
+            "vhost": "my-vhost",
+            "destination": "my-vhost-manager",
+            "destination_type": "queue",
+            "routing_key": "TASK.TEST.CREATE",
+            "arguments": {}
+        },
+        {
+            "source": "my-vhost",
+            "vhost": "my-vhost",
+            "destination": "amq.gen-_cPVW0jVcVb_c7Cv4OcJlQ",
+            "destination_type": "queue",
+            "routing_key": "TASK.TEST.CREATE",
+            "arguments": {}
+        },
+        {
+            "source": "my-vhost",
+            "vhost": "my-vhost",
+            "destination": "my-vhost-payments",
+            "destination_type": "queue",
+            "routing_key": "PAYMENT.REFUND",
+            "arguments": {}
+        }
+    ],
+    "consumers": [
+        {
+            "arguments": {},
+            "ack_required": true,
+            "active": true,
+            "activity_status": "up",
+            "channel_details": {
+                "connection_name": "172.17.0.1:60696 -> 172.17.0.2:5672",
+                "name": "172.17.0.1:60696 -> 172.17.0.2:5672 (1)",
+                "node": "rabbit@my-rabbit",
+                "number": 1,
+                "peer_host": "172.17.0.1",
+                "peer_port": 60696,
+                "user": "guest"
+            },
+            "consumer_tag": "taskWorker",
+            "exclusive": false,
+            "prefetch_count": 1,
+            "queue": {
+                "name": "my-vhost-manager",
+                "vhost": "my-vhost"
+            }
+        }
+    ]
+}
