@@ -5,5 +5,10 @@
   "paginate": {
     "default": 10,
     "max": 50
+  },
+  "rabbitMQConfig": {
+    "managementURL": "http://localhost:15672",
+    "user": "guest",
+    "password": "guest"
   }
 }

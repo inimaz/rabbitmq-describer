@@ -6,7 +6,7 @@
     "users": [
         {
             "name": "guest",
-            "password_hash": "2pvtlqsu0Vn5/Lv8NtJ8RBTOlTBa0V4lqOUdG/W42R4ewbzp",
+            "password_hash": "SOME_PASSWORD",
             "hashing_algorithm": "rabbit_password_hashing_sha256",
             "tags": [
                 "administrator"
@@ -33,7 +33,7 @@
     "global_parameters": [
         {
             "name": "internal_cluster_id",
-            "value": "rabbitmq-cluster-id-OwgON5VEIPWxvhXA0kmM1A"
+            "value": "rabbitmq-cluster-id-SOMEID"
         }
     ],
     "policies": [],
@@ -274,30 +274,6 @@
             "destination_type": "queue",
             "routing_key": "PAYMENT.REFUND",
             "arguments": {}
-        }
-    ],
-    "consumers": [
-        {
-            "arguments": {},
-            "ack_required": true,
-            "active": true,
-            "activity_status": "up",
-            "channel_details": {
-                "connection_name": "172.17.0.1:60696 -> 172.17.0.2:5672",
-                "name": "172.17.0.1:60696 -> 172.17.0.2:5672 (1)",
-                "node": "rabbit@my-rabbit",
-                "number": 1,
-                "peer_host": "172.17.0.1",
-                "peer_port": 60696,
-                "user": "guest"
-            },
-            "consumer_tag": "taskWorker",
-            "exclusive": false,
-            "prefetch_count": 1,
-            "queue": {
-                "name": "my-vhost-manager",
-                "vhost": "my-vhost"
-            }
         }
     ]
 }

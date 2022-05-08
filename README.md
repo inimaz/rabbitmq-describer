@@ -1,29 +1,16 @@
 # rabbitmq-describer
 
-> Tool that describes the rabbitMQ behavior in an especific app
+> Tool that describes the rabbitMQ behavior in a specific app
 
-Brainstorming ideas:
+# Use it
 
-- JSON input:
-
-```json
-{
-  "routing_keys": [
-    {
-      "id": "MY.KEY"
-    }
-  ],
-  "queues": [{ "id": "queueId" }],
-  "bindings": [
-    {
-      "routing_key": "MY.KEY",
-      "queue": "queueId"
-    }
-  ]
-}
+```
+npm install
+npm start
 ```
 
-- call rabbitMQ API (`http://localhost:15672/api/definitions`)to obtain this info + consumers info from `http://localhost:15672/api/consumers`
-- OPTIONAL: code-scraper to search in doc @rabbitmq-describer input -> output messages in producers
+Go to [http://localhost:3030/graph](http://localhost:3030/graph)
 
-| Routing key| --> | queue| --> |consumer|
+# Example of the output
+
+![Graph](./resources/rabbitMQ_demo.png)

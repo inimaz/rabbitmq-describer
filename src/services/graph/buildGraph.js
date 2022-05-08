@@ -1,8 +1,26 @@
 const style = require("./cy-style");
-const rabbitMQJSON = require("./rabbitmq-info.json");
+const obtainRabbitmqInfo = require("./obtainRabbitmqInfo");
+// Some default values
+const defaultJsonGraph = {
+  style,
+  elements: {},
+  layout: {
+    name: "breadthfirst",
+    directed: true,
+    padding: 10,
+    /* color: "#ffff00",*/
+    fit: true,
+  },
+};
 
-const buildJsonGraph = () => {
-  let { nodes, edges } = generateNodesAndEdges(rabbitMQJSON);
+/**
+ * Generates a cytoscape graph
+ * @param {*} app
+ * @returns graph following cytoscapejs notation
+ */
+const buildGraph = async (app) => {
+  const rabbitMQInfo = await obtainRabbitmqInfo(app);
+  let { nodes, edges } = generateNodesAndEdges(rabbitMQInfo);
 
   let jsonGraph = {};
   jsonGraph.style = defaultJsonGraph.style;
@@ -15,6 +33,11 @@ const buildJsonGraph = () => {
   return jsonGraph;
 };
 
+/**
+ * Generate all the needed nodes and edges for cytoscape graph
+ * @param {*} inputJson
+ * @returns
+ */
 const generateNodesAndEdges = (inputJson) => {
   const idGlobalParent = "rabbitMQ";
   const globalParent = { data: { id: idGlobalParent } };
@@ -59,15 +82,4 @@ const generateNodesAndEdges = (inputJson) => {
   return { nodes, edges };
 };
 
-const defaultJsonGraph = {
-  style,
-  elements: {},
-  layout: {
-    name: "breadthfirst",
-    directed: true,
-    padding: 10,
-    /* color: "#ffff00",*/
-    fit: true,
-  },
-};
-module.exports = buildJsonGraph;
+module.exports = { buildGraph, generateNodesAndEdges };
