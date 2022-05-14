@@ -3,14 +3,14 @@
   "description": "",
   "version": "0.0.0",
   "homepage": "",
-  "private": true,
+  "license": "MIT",
   "main": "src",
   "keywords": [
     "feathers"
   ],
   "author": {
     "name": "inimaz",
-    "email": "imaz@ai-verse.com"
+    "email": "93inigo93@gmail.com"
   },
   "contributors": [],
   "bugs": {},
