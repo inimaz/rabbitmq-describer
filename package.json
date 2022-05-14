@@ -6,7 +6,10 @@
   "license": "MIT",
   "main": "src",
   "keywords": [
-    "feathers"
+    "feathers",
+    "rabbitmq",
+    "cytoscapejs",
+    "visualisation"
   ],
   "author": {
     "name": "inimaz",
