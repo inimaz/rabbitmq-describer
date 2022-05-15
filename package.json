@@ -1,8 +1,8 @@
 {
   "name": "rabbitmq-describer",
   "description": "",
-  "version": "0.0.0",
-  "homepage": "",
+  "version": "0.0.1",
+  "homepage": "https://github.com/inimaz/rabbitmq-describer",
   "license": "MIT",
   "main": "src",
   "keywords": [
@@ -15,8 +15,9 @@
     "name": "inimaz",
     "email": "93inigo93@gmail.com"
   },
+  "repository": "github:inimaz/rabbitmq-describer",
   "contributors": [],
-  "bugs": {},
+  "bugs": "https://github.com/inimaz/rabbitmq-describer/issues",
   "directories": {
     "lib": "src",
     "test": "test/",
