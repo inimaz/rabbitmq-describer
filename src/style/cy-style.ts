@@ -9,7 +9,7 @@ const defaultStyle = {
   content: 'data(id)',
 };
 
-module.exports = [
+export default [
   {
     selector: 'node',
     style: {
