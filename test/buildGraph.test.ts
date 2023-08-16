@@ -1,5 +1,5 @@
-const { generateNodesAndEdges } = require('./buildGraph');
-const testJson = require('./test_data/rabbitmqInfo.json');
+import { generateNodesAndEdges } from '../src/buildGraph';
+import testJson from './test_data/rabbitmqInfo.json';
 describe('buildGraph', () => {
   it('should generate correct nodes and edges', () => {
     // Prepare
